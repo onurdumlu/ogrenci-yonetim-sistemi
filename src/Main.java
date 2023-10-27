@@ -10,7 +10,19 @@ public class Main {
         System.out.println("Number of students: " + database.getNumberOfStudents());
         for (int i = 0; i < database.getNumberOfStudents(); i++) {
             Student student = database.getStudent(i);
-            System.out.println("Student " + (i + 1) + ": " + student.getName() + ", " + student.getStudentID() + ", " + student.getDepartment() + ","+ student.getRegister());
+            System.out.println("Student " + (i + 1) + ": " + student.getName() + ", " + student.getStudentID() + ", " + student.getDepartment() + "," + student.getRegister());
+        }
+        CourseDatabase databaseC = new CourseDatabase();
+
+        // Course ekleme
+        databaseC.addCourse(new Course("Computer Science", "CS101", "Fall 2023"));
+        databaseC.addCourse(new Course("Mechanical Engineering", "ME101", "Fall 2022"));
+
+        // Eklenen Course'ların bilgilerini alma
+        System.out.println("Number of courses: " + databaseC.getNumberOfCourses());
+        for (int i = 0; i < databaseC.getNumberOfCourses(); i++) {
+            Course course = databaseC.getCourse(i);
+            System.out.println("Course " + (i + 1) + ": " + course.getName() + ", " + course.getCourseID() + ", " + course.getSemester());
         }
     }
 }
